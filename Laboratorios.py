@@ -18,6 +18,21 @@ def funcion_lineal1(x_modelo,pendiente_m,odo_b):
   return pendiente_m *x_modelo+ odo_b
 
 y_prediccion = funcion_lineal(x_train,200,100)
+
+
+def funcion_Costos(x, y, w, b):
+   
+    m = x.shape[0] 
+    cost = 0
+    
+    for i in range(m):
+        f_wb = w * x[i] + b
+        cost = cost + (f_wb - y[i])**2
+    total_cost = 1 / (2 * m) * cost
+
+    return total_cost
+
+
 #Grafico:
 
 plt.scatter(x_train, y_train, marker = "x", c="b")
