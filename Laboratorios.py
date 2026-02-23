@@ -1,10 +1,10 @@
 #Labo 1
 
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
-x_train1 = np.array([1,2,3,4])
-y_train1 = np.array([2,4,16,32])
+x_train = np.array([1.0, 2.0])   #features
+y_train = np.array([300.0, 500.0])   #target value
 
 def funcion_lineal(x_modelo, pendiente_m , odo_b):
     lenX = len(x_modelo)
@@ -17,12 +17,11 @@ def funcion_lineal(x_modelo, pendiente_m , odo_b):
 def funcion_lineal1(x_modelo,pendiente_m,odo_b):
   return pendiente_m *x_modelo+ odo_b
 
-y_prediccion = funcion_lineal(x_train1,200,100)
-print (y_prediccion)
+y_prediccion = funcion_lineal(x_train,200,100)
 #Grafico:
 
-plt.scatter(x_train1, y_train1, marker = "x", c="b")
-plt.plot(x_train1, y_prediccion, c = "r", label = "funcion lineal con b y w arbitrarios")
+plt.scatter(x_train, y_train, marker = "x", c="b")
+plt.plot(x_train, y_prediccion, c = "r", label = "funcion lineal con b y w arbitrarios")
 plt.title("Ejemplo de juampi")
 plt.ylabel("titulo de las y")
 plt.xlabel("titulo de las x")
